@@ -26,7 +26,7 @@ function MainBody()
 //child comp1
 function MainHeader()
 {
-  return(<p>React COurse</p>)
+  return(<h1 className = "text-primary">React COurse</h1>)
 }
 
 //chile comp2 
