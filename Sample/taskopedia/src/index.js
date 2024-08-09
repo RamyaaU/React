@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "./CSS/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -26,7 +27,7 @@ function MainBody()
 //child comp1
 function MainHeader()
 {
-  return(<h1 className = "text-primary">React COurse</h1>)
+  return(<h1 className = "heading1">React COurse</h1>)
 }
 
 //chile comp2 
