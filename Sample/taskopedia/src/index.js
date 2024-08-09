@@ -13,12 +13,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //component
 function MainBody()
 {
+  //different ways to init variable
+  const whatWillBeLearned = "React JS";
+  // let whatWillBeLearned = "React JS";
+  // var whatWillBeLearned = "React JS";
+
   return (
   <div>
-    <p>TaskOPedia</p>
+    <p>TaskOPedia - a project built using {whatWillBeLearned}</p>
     <ul>
-      <li>ABC</li>
-      <li>DEF</li>
+      <li>Basic foundation of React</li>
+      <li>Class and Components</li>
     </ul>
   </div>
 )
