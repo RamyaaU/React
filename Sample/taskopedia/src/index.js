@@ -18,9 +18,14 @@ function MainBody()
   // let whatWillBeLearned = "React JS";
   // var whatWillBeLearned = "React JS";
 
+  const value = 3;
+
   return (
   <div>
-    <p>TaskOPedia - a project built using {whatWillBeLearned}</p>
+    <p>TaskOPedia - a project built using {whatWillBeLearned}
+      <br />
+        Total Topics - {value}
+    </p>
     <ul>
       <li>Basic foundation of React</li>
       <li>Class and Components</li>
