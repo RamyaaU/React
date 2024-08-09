@@ -32,7 +32,8 @@ function MainHeader()
 //chile comp2 
 function SubHeader()
 {
-  return(<p>Learning react is exciting</p>)
+  //call it using style element
+  return(<p style={subHeaderStyle}>Learning react is exciting</p>)
 }
 
 //parent comp
@@ -46,9 +47,15 @@ function Header()
   );
 }
 
+const subHeaderStyle = {
+  color : "blueviolet",
+  backgroundColor : "lightgray"
+}
+
 function Footer()
 {
-  return(<p>Happy Coding!</p>)
+  //styling 1
+  return(<p style={{color : "gray", backgroundColor : "black "}}>Happy Coding!</p>)
 }
 
 //rendering teh component
