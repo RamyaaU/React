@@ -3,76 +3,89 @@ import ReactDOM from 'react-dom/client';
 import "./CSS/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//   </React.StrictMode>
-// );
 
-// root.render(<div>Learn React</div>)
-
-//component
-function MainBody()
-{
-  //different ways to init variable
+// MainBody Component
+function MainBody() {
   const whatWillBeLearned = "React JS";
-  // let whatWillBeLearned = "React JS";
-  // var whatWillBeLearned = "React JS";
-
   const value = 3;
 
   return (
-  <div>
-    <p>TaskOPedia - a project built using {whatWillBeLearned}
-      <br />
-        Total Topics - {value}
-    </p>
-    <ul>
-      <li>Basic foundation of React</li>
-      <li>Class and Components</li>
-    </ul>
-  </div>
-)
-}
-
-//child comp1
-function MainHeader()
-{
-  return(<h1 className = "heading1">React COurse</h1>)
-}
-
-//chile comp2 
-function SubHeader()
-{
-  //call it using style element
-  return(<p style={subHeaderStyle}>Learning react is exciting</p>)
-}
-
-//parent comp
-function Header()
-{
-  return(
     <div>
-      <MainHeader></MainHeader>
-      <SubHeader></SubHeader>
+      <p>
+        TaskOPedia - a project built using {whatWillBeLearned}
+        <br />
+        Total Topics - {value}
+      </p>
+      <ul>
+        <li>Basic foundation of React</li>
+        <li>Class and Components</li>
+      </ul>
+    </div>
+  );
+}
+
+// Students Component
+function Students() {
+  const fullName = "JD";
+  const progExp = 2;
+
+  return (
+    <div className="container p-4">
+      <div className="row">Students Enrolled</div>
+      <div className="row border">
+        <div className="col-1">
+         <img src={`https://ui-avatars.com/api/?name=${fullName}`} className="w-10"></img>
+        </div>
+        <div className="col-10">
+          {fullName} <br />
+          Coding Experience {progExp} years
+        </div>
       </div>
+    </div>
+  );
+}
+
+// MainHeader Component
+function MainHeader() {
+  return <h1 className="heading1">React Course</h1>;
+}
+
+// SubHeader Component
+function SubHeader() {
+  return <p style={subHeaderStyle}>Learning React is exciting</p>;
+}
+
+// Header Component (Parent)
+function Header() {
+  return (
+    <div>
+      <MainHeader />
+      <SubHeader />
+      <MainBody /> 
+      <Students /> 
+      <Students /> 
+      <Students /> 
+      <Students /> 
+    </div>
   );
 }
 
 const subHeaderStyle = {
-  color : "blueviolet",
-  backgroundColor : "lightgray"
+  color: "blueviolet",
+  backgroundColor: "lightgray",
+};
+
+// Footer Component
+function Footer() {
+  return (
+    <p style={{ color: "gray", backgroundColor: "black" }}>Happy Coding!</p>
+  );
 }
 
-function Footer()
-{
-  //styling 1
-  return(<p style={{color : "gray", backgroundColor : "black "}}>Happy Coding!</p>)
-}
-
-//rendering teh component
+// Rendering the components
 root.render(
   <div>
-<Header />
-<MainBody />
-<Footer/>
-</div>);
+    <Header />
+    <Footer />
+  </div>
+);
