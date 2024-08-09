@@ -23,5 +23,38 @@ function MainBody()
 )
 }
 
+//child comp1
+function MainHeader()
+{
+  return(<p>React COurse</p>)
+}
+
+//chile comp2 
+function SubHeader()
+{
+  return(<p>Learning react is exciting</p>)
+}
+
+//parent comp
+function Header()
+{
+  return(
+    <div>
+      <MainHeader></MainHeader>
+      <SubHeader></SubHeader>
+      </div>
+  );
+}
+
+function Footer()
+{
+  return(<p>Happy Coding!</p>)
+}
+
 //rendering teh component
-root.render(<MainBody />);
+root.render(
+  <div>
+<Header />
+<MainBody />
+<Footer/>
+</div>);
