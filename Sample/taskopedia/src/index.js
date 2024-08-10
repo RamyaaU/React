@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./CSS/style.css";
 import Header from './Header';
-import Students from './Students';
+import Student from './Student';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,11 +15,12 @@ function Footer() {
 
 // Rendering the components
 root.render(
-  <div>
+  <div className="container">
     <Header />
-    <Students />
-    <Students />
-    <Students />
+    <div className="row">Students Enrolled</div>
+    <Student fullName="Kris" progExp={2}/>
+    <Student fullName="Katie" progExp={5} />
+    <Student  fullName="Kiara" progExp={4}/>
     <Footer />
   </div>
 );
