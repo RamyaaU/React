@@ -15,9 +15,9 @@ function Footer() {
 
 // Rendering the components
 root.render(
-  <div className="container">
+  <div className="">
     <Header />
-    <div className="row">Students Enrolled</div>
+    <div className="container row">Students Enrolled</div>
     <Student fullName="Kris" progExp={2}/>
     <Student fullName="Katie" progExp={5} />
     <Student fullName="Kiara" progExp={4}/>
