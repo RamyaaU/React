@@ -1,5 +1,4 @@
-import logo from './images/reactimg.png';
-
+import logo from '../images/reactimg.png';
 
   // MainHeader Component
   function MainHeader() {
@@ -14,7 +13,7 @@ import logo from './images/reactimg.png';
   
   // SubHeader Component
   function SubHeader() {
-    return <p style={subHeaderStyle}>Learning React is exciting</p>;
+    return <p style={subHeaderStyle} className='text-center'>Learning React is exciting</p>;
   }
   
   // Header Component (Parent)
