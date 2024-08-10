@@ -20,7 +20,7 @@ root.render(
     <div className="row">Students Enrolled</div>
     <Student fullName="Kris" progExp={2}/>
     <Student fullName="Katie" progExp={5} />
-    <Student  fullName="Kiara" progExp={4}/>
+    <Student fullName="Kiara" progExp={4}/>
     <Footer />
   </div>
 );
