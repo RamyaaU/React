@@ -19,27 +19,7 @@ function MainBody() {
     );
   }
   
-  // Students Component
-  function Students() {
-    const fullName = "JD";
-    const progExp = 2;
-  
-    return (
-      <div className="container p-4">
-        <div className="row">Students Enrolled</div>
-        <div className="row border">
-          <div className="col-1">
-           <img src={`https://ui-avatars.com/api/?name=${fullName}`} className="w-10"></img>
-          </div>
-          <div className="col-10">
-            {fullName} <br />
-            Coding Experience {progExp} years
-          </div>
-        </div>
-      </div>
-    );
-  }
-  
+
   // MainHeader Component
   function MainHeader() {
     return <h1 className="heading1">React Course</h1>;
@@ -57,10 +37,10 @@ function MainBody() {
         <MainHeader />
         <SubHeader />
         <MainBody /> 
+        {/* <Students /> 
         <Students /> 
         <Students /> 
-        <Students /> 
-        <Students /> 
+        <Students />  */}
       </div>
     );
   }
