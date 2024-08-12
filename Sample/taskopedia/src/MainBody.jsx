@@ -1,7 +1,6 @@
 import Student from './Student';
-import StudentReview from './StudentReview';
+import StudentReview from './Layout/StudentReview';
 
-// MainBody Component
 export default function MainBody() {
     const whatWillBeLearned = "React JS";
     const value = 3;
@@ -19,7 +18,8 @@ export default function MainBody() {
         </ul>
           <div className="container row">Students Enrolled</div>
           <Student fullName="Kris" progExp={2}>
-          <StudentReview/>
+          {/* including student review as child component */}
+           <StudentReview/> 
           </Student>
           <Student fullName="Katie" progExp={5} >
           <StudentReview/>
