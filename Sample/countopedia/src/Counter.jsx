@@ -1,52 +1,69 @@
-//class based component
-import React  from "react";
+import React from "react";
 import attack from "./images/attack.png";
-import defend from "./images/defend.png"
+import defend from "./images/defend.png";
 
 export default class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.handleAttack = this.handleAttack.bind(this);
     this.handleDefence = this.handleDefence.bind(this);
-    //creation of state 
+
     this.state = {
-        //creation of state object
       count: 0,
+      gameStatus: "",
+      lastPlay: "",
     };
   }
 
-  handleAttack() {
-    // alert("Attack clicked");
-    //increments the count by 1 
-    //this.setState({ count: this.state.count + 1 });
-
-    //new syntax for setstate
+  handleAttack = () => {
     this.setState((previousState) => {
-        return {
-            count : previousState.count + 1,
-        }
-    })
-  }
+      let newCount = previousState.count + Math.round(Math.random() * 10); // Increment the score
+      return {
+        count: newCount,
+        lastPlay: "Attack",
+        gameStatus: newCount >= 10 ? "You Won!!" : previousState.gameStatus, // Adjusted win condition
+      };
+    });
+  };
 
-  handleDefence() {
-    // alert("Defence clicked");
-    //decrements by 1
-    //this.setState({ count: this.state.count - 1 });
-
+  handleDefence = () => {
     this.setState((previousState) => {
-        return {
-            count : previousState.count - 1,
-        }
-    })
-  }
+      let newCount = previousState.count - Math.round(Math.random() * 10); // Decrease the score
+      return {
+        count: newCount,
+        lastPlay: "Defence",
+        gameStatus: newCount <= -10 ? "You Lost!!" : previousState.gameStatus, // Adjusted loss condition
+      };
+    });
+  };
+
+  handleRandomPlay = () => {
+    let playMode = Math.round(Math.random());
+
+    if (playMode === 0) {
+      this.handleAttack();
+    } else {
+      this.handleDefence();
+    }
+  };
+
+  handleReset = () => {
+    this.setState(() => {
+      return {
+        count: 0,
+        gameStatus: "",
+        lastPlay: "",
+      };
+    });
+  };
 
   render() {
     return (
       <div className="row text-white text-center">
-        <h1>Game Score: {this.state.count} </h1>
+        <h1>Game Score: {this.state.count}</h1>
         <p>You win at +10 points and lose at -10 points!</p>
-        <p>Last Play: </p>
-        <h3>Game Status : </h3>
+        <p>Last Play: {this.state.lastPlay}</p>
+        <h3>Game Status: {this.state.gameStatus}</h3>
         <div className="col-6 col-md-3 offset-md-3">
           <img
             style={{
@@ -56,6 +73,7 @@ export default class Counter extends React.Component {
             }}
             className="p-4 rounded"
             src={attack}
+            alt="Attack"
             onClick={this.handleAttack}
           />
         </div>
@@ -68,6 +86,7 @@ export default class Counter extends React.Component {
             }}
             className="p-4 rounded"
             src={defend}
+            alt="Defend"
             onClick={this.handleDefence}
           />
         </div>
